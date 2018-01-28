@@ -1,6 +1,6 @@
 'use strict';
 
-const Node = require('./node');
+const Node = require('../models/node');
 
 module.exports = class {
   constructor(maxSize=1048) {
@@ -9,7 +9,9 @@ module.exports = class {
     this.size = 0;
   }
   push(val) {
-    if(this.size === this.maxSize) throw new Error('Stack overflow!');
+    if (this.size === this.maxSize) {
+      throw new Error('Stack overflow!');
+    }
 
     let node = new Node(val);
 
@@ -20,7 +22,12 @@ module.exports = class {
   };
 
   pop() {
+    if (this.size === 0) {
+      throw new Error('Stack underflow!');
+    }
+
     let temp = this.top;
+
     this.top = temp.next;
     temp.next = null;
     this.size--;

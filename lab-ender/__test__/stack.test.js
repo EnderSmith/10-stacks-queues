@@ -20,7 +20,7 @@ describe('Stack Data Structure Module', function () {
       expect(this.stack.maxSize).toEqual(1048);
     });
   });
-  describe('#push', () => {
+  describe('push()', () => {
     it('should have a size of 20', () => {
       [...Array(20)].map((e, i) => this.stack.push(~~(Math.random() * i)));
       expect(this.stack.size).toEqual(20);
@@ -29,21 +29,29 @@ describe('Stack Data Structure Module', function () {
       this.stack.push(1);
       expect(this.stack.top.val).toEqual(1);
     });
-    it('throw an error when maxSize is met', () => {
+    it('should throw an error when maxSize is met', () => {
       expect(() => {
-        [...Array(1049)].map((e, i) => this.stack.push(~~(Math.random() * i)));
-      }).toThrow();
+        for (let i = 0; i <= 1048; i++) {
+          this.stack.push(2);
+        };
+      }).toThrow(/overflow/);
     });
   });
-  describe('#pop', () => {
+  describe('pop()', () => {
     it('should remove the top most node from the stack', () => {
       this.stack.push(1);
       expect(this.stack.top.val).toEqual(1);
       expect(this.stack.pop().val).toEqual(1);
-
+      expect(this.stack.top).toBeNull();
+    });
+    it('should throw an error if stack is empty', () => {
+      expect(this.stack.top).toBeNull();
+      expect(() => {
+        this.stack.pop();
+      }).toThrow(/underflow/);
     });
   });
-  describe('#peek', () => {
+  describe('peek()', () => {
     it('should return the top of the stack', () => {
       expect(this.stack.top).toBeNull();
       this.stack.push(1);

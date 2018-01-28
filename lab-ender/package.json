@@ -7,12 +7,26 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest --verbose -i"
+    "test": "jest --verbose -i --coverage",
+    "linter": "eslint ."
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/models/node.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": -10
+      }
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "debug": "^3.1.0",
     "eslint": "^4.16.0",
     "jest": "^22.1.4"
   }
