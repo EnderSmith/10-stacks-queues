@@ -43,7 +43,7 @@ describe('Queue Data Structure Module', function () {
       expect(() => {
         for (let i = 0; i <= 1048; i++) {
           this.queue.enqueue(2);
-        };
+        }
       }).toThrow(/overflow/);
     });
   });

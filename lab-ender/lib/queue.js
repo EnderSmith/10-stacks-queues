@@ -24,7 +24,7 @@ module.exports = class {
     this.back = node;
     this.size++;
     return this.front;
-  };
+  }
 
   dequeue() {
     if(this.size === 0) {
@@ -41,5 +41,5 @@ module.exports = class {
     this.size--;
 
     return temp;
-  };
+  }
 };

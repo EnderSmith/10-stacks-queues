@@ -7,5 +7,5 @@ module.exports = class {
     }
     this.val = val;
     this.next = null;
-  };
+  }
 };

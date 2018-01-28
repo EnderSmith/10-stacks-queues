@@ -33,7 +33,7 @@ describe('Stack Data Structure Module', function () {
       expect(() => {
         for (let i = 0; i <= 1048; i++) {
           this.stack.push(2);
-        };
+        }
       }).toThrow(/overflow/);
     });
   });

@@ -19,7 +19,7 @@ module.exports = class {
     this.top = node;
     this.size++;
     return this.top;
-  };
+  }
 
   pop() {
     if (this.size === 0) {
@@ -33,9 +33,9 @@ module.exports = class {
     this.size--;
 
     return temp;
-  };
+  }
 
   peek() {
     return this.top;
-  };
+  }
 };

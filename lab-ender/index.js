@@ -28,4 +28,4 @@ Peek (view top node of stack, without removing):
 Exit:
  > .exit\n`;
 
-console.log(instruction)
+console.log(instruction);
